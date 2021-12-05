@@ -21,7 +21,7 @@ public class StudentController {
 	public String retrieveStudents(Model model) {
 		List<Student> students = studentService.findAll();
 		model.addAttribute("Students", students);
-		return "index";
+		return "home";
 	}
 	
 	@RequestMapping("/add")
