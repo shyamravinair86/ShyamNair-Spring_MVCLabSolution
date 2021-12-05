@@ -17,18 +17,18 @@ public class StudentImplementation implements StudentService {
 
 	private SessionFactory sessionFactory;
 	private Session session;
-	
+
 	@Autowired
 	public StudentImplementation(SessionFactory sessionFactory) {
 		this.sessionFactory = sessionFactory;
-		
+
 		try {
 			session = sessionFactory.getCurrentSession();
 		} catch (Exception e) {
 			session = sessionFactory.openSession();
 		}
 	}
-	
+
 	@Transactional
 	public List<Student> findAll() {
 		Transaction transaction = session.beginTransaction();
@@ -36,7 +36,7 @@ public class StudentImplementation implements StudentService {
 		transaction.commit();
 		return students;
 	}
-	
+
 	@Transactional
 	public Student findById(int studentId) {
 		Transaction transaction = session.beginTransaction();
@@ -44,14 +44,14 @@ public class StudentImplementation implements StudentService {
 		transaction.commit();
 		return student;
 	}
-	
+
 	@Transactional
 	public void save(Student student) {
 		Transaction transaction = session.beginTransaction();
 		session.saveOrUpdate(student);
 		transaction.commit();
 	}
-	
+
 	@Transactional
 	public void deleteById(int studentId) {
 		Transaction transaction = session.beginTransaction();
@@ -59,5 +59,5 @@ public class StudentImplementation implements StudentService {
 		session.delete(student);
 		transaction.commit();
 	}
-	
+
 }
