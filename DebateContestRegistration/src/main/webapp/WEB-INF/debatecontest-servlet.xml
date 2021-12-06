@@ -13,7 +13,7 @@
 
 	<!-- Add support for component scanning -->
 	<context:component-scan
-		base-package="com.debatecontest" />
+		base-package="com.debatecontest.pack" />
 
 	<!-- Define Spring MVC view resolver -->
 	<bean
@@ -24,24 +24,26 @@
 		<property name="prefix" value="/WEB-INF/views/"></property>
 		<property name="suffix" value=".jsp"></property>
 	</bean>
-	
+
 	<!-- Define mysql details -->
-	<bean class="org.springframework.jdbc.datasource.DriverManagerDataSource" id="dataSource">
+	<bean
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource"
+		id="dataSource">
 		<property name="driverClassName"
 			value="com.mysql.cj.jdbc.Driver"></property>
 		<property name="url"
-			  value="jdbc:mysql://localhost:3306/debatecontest-schema?allowPublicKeyRetrieval=true&amp;useSSL=false&amp;serverTimezone=UTC"></property>
+			value="jdbc:mysql://localhost:3306/debatecontest-schema?allowPublicKeyRetrieval=true&amp;useSSL=false&amp;serverTimezone=UTC"></property>
 		<property name="username" value="root"></property>
 		<property name="password" value="admin1234"></property>
 	</bean>
-	
+
 	<!-- Define sessionFactory -->
 	<bean id="sessionFactory"
 		class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
 		<property name="dataSource" ref="dataSource"></property>
 		<property name="annotatedClasses">
 			<list>
-				<value>com.debatecontest.model.Student</value>
+				<value>com.debatecontest.pack.model.Student</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">

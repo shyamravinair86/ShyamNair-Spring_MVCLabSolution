@@ -1,4 +1,4 @@
-package com.debatecontest.dao;
+package com.debatecontest.pack.implementation;
 
 import java.util.List;
 
@@ -9,8 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.debatecontest.model.Student;
-import com.debatecontest.service.StudentService;
+import com.debatecontest.pack.model.Student;
+import com.debatecontest.pack.service.StudentService;
 
 @Repository
 public class StudentImplementation implements StudentService {

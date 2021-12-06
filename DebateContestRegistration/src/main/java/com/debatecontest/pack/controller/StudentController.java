@@ -1,15 +1,16 @@
-package com.debatecontest.controller;
+package com.debatecontest.pack.controller;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.debatecontest.model.Student;
-import com.debatecontest.service.StudentService;
+import com.debatecontest.pack.model.Student;
+import com.debatecontest.pack.service.StudentService;
 
 @Controller
 public class StudentController {
@@ -38,7 +39,7 @@ public class StudentController {
 		return "register";
 	}
 
-	@RequestMapping("/save")
+	@PostMapping("/save")
 	public String save(@RequestParam("studentId") int studentId, @RequestParam("firstName") String firstName,
 			@RequestParam("lastName") String lastName, @RequestParam("course") String course,
 			@RequestParam("country") String country) {

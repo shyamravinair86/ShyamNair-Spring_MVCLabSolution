@@ -1,4 +1,4 @@
-package com.debatecontest.model;
+package com.debatecontest.pack.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
